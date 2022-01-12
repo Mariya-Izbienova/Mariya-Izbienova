@@ -38,20 +38,10 @@
 		
     </head>
     <body class="">
+	<?php
+		require "main.php";
+	?>
       <!-- Pushy Menu -->
-	  <?php
-		$menu = array (
-			"#home" => "Home",
-			"#feat" => "Features",
-			"#about" => "About me",
-			"#news" => "My Blog",
-			"#history" => "My History",
-			"#photos" => "Look my Photos",
-			"#contact" => "Get in Touch!",
-			"http://www.themeinthebox.com/ourtheme/mountain-king-bootstrap-template/" => "Download"
-			
-		)
-	  ?>
 	  <nav class="pushy pushy-left">
         <ul class="list-unstyled">
 	  <?php
@@ -113,25 +103,6 @@ calling extra attention to featured content or information.";
 		
 	
 	<?php
-$tizer = array(
-array("Adelay" => "100ms",
-      "icon" => "pencil",
-      "title" => "Consectetur Risus",
-      "text" => "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
- ),
- array("Adelay" => "300ms",
-       "icon" => "camera-outline",
-       "title" => "Ultricies Aenean",
-       "text" => "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla."
-  
-  
- ),
- array("Adelay" => "500ms",
-       "icon" => "bookmark",
-       "title" => "Cras Sollicitudin",
-       "text" => "ras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
- )
-);
 
 
 for ($row = 0; $row < 3; $row++) {
@@ -287,7 +258,11 @@ echo '<div class="col-md-4 text-center wow fadeInUp" data-wow-delay="'.$tizer[$r
             <div class="container">
                 <div class="row">
 				<!-- Вызов контента с файла -->
-				<main class="content"><?= $partners; ?></main>
+				<?php
+				  foreach ($partner as $key){
+					echo '<div class="col-md-2"><img src="'.$key.'" class="img-responsive" /></div>';
+				}
+				?>
 				
                    <!-- <div class="col-md-2">
                         <img src="images/logo-sample-01.jpg" class="img-responsive" />
